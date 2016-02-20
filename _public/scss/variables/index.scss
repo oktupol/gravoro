@@ -1,3 +1,5 @@
+$theme: "dark";
+
 $content-width: 700px;
 $content-width-large-desktop: (10 / 7) * $content-width;
 
@@ -14,3 +16,10 @@ $font-family: Georgia, Times, 'Times New Roman', serif;
 $heading-font-family: $font-family;
 $heading-color: $color;
 $sub-heading-color: darken($heading-color, 30%);
+
+@if $theme == "bright" {
+  $background-overlay-color: invert($background-overlay-color);
+  $color: invert($color);
+  $heading-color: $color;
+  $sub-heading-color: lighten($heading-color, 30%);
+}
