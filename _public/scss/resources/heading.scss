@@ -1,0 +1,27 @@
+#heading {
+  font-family: $heading-font-family;
+  color: $heading-color;
+  font-style: italic;
+  font-variant: small-caps;
+  font-weight: bold;
+  text-align: center;
+
+  @media #{$viewport-tablet} {
+    margin-top: 2.4em;
+  }
+
+  @media #{$viewport-desktop} {
+    h1 {
+      font-size: 3em;
+    }
+    margin-top: 4em;
+  }
+
+  small {
+    @extend .sidelines;
+
+    color: $sub-heading-color;
+    font-weight: normal;
+    font-variant: normal;
+  }
+}

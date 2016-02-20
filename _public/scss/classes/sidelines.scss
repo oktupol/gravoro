@@ -1,0 +1,44 @@
+.sidelines {
+  position: relative;
+  display: inline-block;
+  line-height: .6em;
+
+  &:before, &:after {
+    position: absolute;
+    height: .3em;
+    border-bottom: solid 1px;
+    top: 0;
+    width: 24px;
+    content: "";
+
+    @media #{$viewport-tablet} {
+      width: 120px;
+    }
+    @media #{$viewport-desktop} {
+      width: 240px;
+    }
+    @media #{$viewport-large-desktop} {
+      width: 480px;
+    }
+  }
+
+  &:before {
+    right: 100%;
+    margin-right: 15px;
+  }
+
+  &:after {
+    left: 100%;
+    margin-left: 15px;
+  }
+}
+
+.sidelines-double {
+  @extend .sidelines;
+
+  line-height: .5em;
+
+  &:before, &:after {
+    border-top: solid 1px;
+  }
+}

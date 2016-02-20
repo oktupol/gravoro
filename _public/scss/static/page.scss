@@ -1,0 +1,50 @@
+@-o-viewport {
+  width: device-width;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@viewport {
+  width: device-width;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  color: $color;
+  font-family: $font-family;
+  background: image-url($background-image-mobile) no-repeat center center fixed;
+  @media #{$viewport-tablet} {
+    background-image: image-url($background-image-tablet);
+  }
+  @media #{$viewport-desktop} {
+    background-image: image-url($background-image-desktop);
+  }
+  @media #{$viewport-large-desktop} {
+    background-image: image-url($background-image-large-desktop);
+  }
+  background-size: cover;
+
+  margin: 0;
+  min-height: 100%;
+}
+
+#background-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  background-color: transparentize($background-color, $background-brightness);
+  z-index: -1000;
+}
+
+#page {
+  margin: 0;
+  padding: 8px 18px;
+}

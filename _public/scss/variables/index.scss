@@ -1,0 +1,16 @@
+$content-width: 700px;
+$content-width-large-desktop: 1000px;
+
+$background-image-mobile: "background_0.jpg";
+$background-image-tablet: "background_1.jpg";
+$background-image-desktop: "background_2.jpg";
+$background-image-large-desktop: "background_3.jpg";
+$background-color: #000000;
+$background-brightness: .18;
+
+$color: #dcdcdc;
+$font-family: Georgia, Times, 'Times New Roman', serif;
+
+$heading-font-family: $font-family;
+$heading-color: $color;
+$sub-heading-color: darken($heading-color, 30%);
