@@ -5,7 +5,6 @@
   text-align: center;
 
   h1 {
-    @include text-effect-retro(darken($heading-color, 40%));
     font-variant: small-caps;
 
     @media #{$viewport-desktop} {

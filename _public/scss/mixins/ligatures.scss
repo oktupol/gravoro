@@ -1,0 +1,12 @@
+@mixin ligatures() {
+     -moz-font-feature-settings: "liga=1, dlig=1", "kern=1";
+     -moz-font-feature-settings: "liga", "dlig", "kern";
+      -ms-font-feature-settings: "liga", "dlig", "kern";
+  -webkit-font-feature-settings: "liga", "dlig", "kern";
+       -o-font-feature-settings: "liga", "dlig", "kern";
+          font-feature-settings: "liga", "dlig", "kern";
+
+  font-variant-ligatures: common-ligatures no-historical-ligatures discretionary-ligatures;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}

@@ -17,6 +17,8 @@ html {
 body {
   color: $color;
   font-family: $font-family;
+  @include ligatures();
+
   background: image-url($background-image-mobile) no-repeat center center fixed;
   @media #{$viewport-tablet} {
     background-image: image-url($background-image-tablet);
