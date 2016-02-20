@@ -1,13 +1,12 @@
 .sidelines {
   position: relative;
   display: inline-block;
-  line-height: .6em;
 
   &:before, &:after {
     position: absolute;
-    height: .3em;
+    height: 0;
     border-bottom: solid 1px;
-    top: 0;
+    top: .5em;
     width: 24px;
     content: "";
 
@@ -36,9 +35,9 @@
 .sidelines-double {
   @extend .sidelines;
 
-  line-height: .5em;
-
   &:before, &:after {
+    top: .38em;
+    height: .24em;
     border-top: solid 1px;
   }
 }
