@@ -40,7 +40,7 @@ body {
   left: 0;
   right: 0;
   margin: 0;
-  background-color: transparentize($background-color, $background-brightness);
+  background-color: transparentize($background-overlay-color, $background-overlay-transparency);
   z-index: -1000;
 }
 
