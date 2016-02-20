@@ -1,11 +1,10 @@
 @import "compass";
 
+@import "variables";
+@import "mixins";
+@import "classes";
 
-@import "_variables";
-@import "_mixins";
-@import "_classes";
+@import "static";
 
-@import "_static";
-
-@import "_resources";
-@import "_custom";
+@import "resources";
+@import "custom";
