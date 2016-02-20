@@ -1,0 +1,9 @@
+@mixin text-effect-3d($shadow-color) {
+  text-shadow: 0 .015em 0 darken($shadow-color, 16%),
+  0 .03em 0 darken($shadow-color, 24%),
+  0 .045em 0 darken($shadow-color, 32%),
+  0 .06em 0 darken($shadow-color, 40%),
+  0 .075em 0 darken($shadow-color, 48%),
+  0 .09em 0 darken($shadow-color, 56%),
+  0 .105em 0 darken($shadow-color, 72%);
+}

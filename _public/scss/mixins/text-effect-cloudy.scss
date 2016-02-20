@@ -1,0 +1,4 @@
+@mixin text-effect-cloudy($color) {
+  text-shadow: 0 0 .09em $color;
+  color: transparent;
+}
