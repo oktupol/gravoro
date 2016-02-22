@@ -16,7 +16,6 @@
     bottom: 0;
 
     transition: all $teaser-transition-duration $teaser-transition;
-    transition-property: transform, border-radius;
   }
 
   img.teaser-image {
@@ -32,6 +31,7 @@
     padding: .5em 1em;
     background-color: transparentize($teaser-text-background-overlay-color, $teaser-text-background-overlay-transparency);
     color: $teaser-text-color;
+    overflow: hidden;
   }
 
   &:hover > img.teaser-image {
@@ -41,5 +41,6 @@
   &:hover > .teaser-text {
     @include transform(rotateY(360deg));
     @include border-radius($teaser-flip-card-border-radius);
+    overflow: auto;
   }
 }

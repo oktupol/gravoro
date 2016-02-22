@@ -18,7 +18,6 @@
     width: 100%;
     max-width: none;
     display: block;
-    transition-property: left, top, right, bottom, width, filter;
     transition: all $teaser-transition-duration $teaser-transition;
   }
 
@@ -33,7 +32,6 @@
     font-size: $teaser-text-initial-scale * 1em;
     opacity: 0;
 
-    transition-property: left, top, right, bottom, opacity, font-size, filter;
     transition: all $teaser-transition-duration $teaser-transition;
 
     background-color: transparentize($teaser-text-background-overlay-color, $teaser-text-background-overlay-transparency);
@@ -52,6 +50,7 @@
       bottom: (1 - $teaser-image-final-scale) * 50%;
       width: $teaser-image-final-scale * 100%;
       max-width: none;
+
       @include filter(blur($teaser-image-final-blur));
       @include transform(rotate($teaser-image-final-rotation));
     }
