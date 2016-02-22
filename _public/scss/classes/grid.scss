@@ -17,17 +17,21 @@
 }
 
 @each $viewport-name, $viewport in $viewports {
-  @media #{$viewport} {
-    .grid--fit--#{$viewport-name} {
+  .grid--fit--#{$viewport-name} {
+    @extend .grid;
+    @media #{$viewport} {
       & > .grid-cell {
         flex: 1;
       }
     }
+  }
 
-    $widths: (full: 1, half: 2, third: 3, quarter: 4);
+  $widths: (full: 1, half: 2, third: 3, quarter: 4);
 
-    @each $width, $divisor in $widths {
-      .grid--#{$width}--#{$viewport-name} {
+  @each $width, $divisor in $widths {
+    .grid--#{$width}--#{$viewport-name} {
+      @extend .grid;
+      @media #{$viewport} {
         & > .grid-cell {
           flex: 0 0 ((1 / $divisor) * 100%);
         }
