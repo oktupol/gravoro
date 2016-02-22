@@ -4,20 +4,12 @@
       display: none;
     }
 
-    .visible-inline--#{$viewport-name} {
-      display: inline;
-    }
+    $display-options: (inline, block, inline-block, flex);
 
-    .visible-block--#{$viewport-name} {
-      display: block;
-    }
-
-    .visible-inline-block--#{$viewport-name} {
-      display: inline-block;
-    }
-
-    .visible-flex--#{$viewport-name} {
-      display: flex;
+    @each $display-option in $display-options {
+      .visible-#{$display-option}--#{$viewport-name} {
+        display: $display-option;
+      }
     }
   }
 }
