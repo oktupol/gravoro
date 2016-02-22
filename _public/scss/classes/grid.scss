@@ -37,6 +37,12 @@
         }
       }
     }
+
+    @media #{$viewport} {
+      .grid-cell--#{$width}--#{$viewport-name} {
+        flex: 0 0 ((1 / $divisor) * 100%);
+      }
+    }
   }
 }
 

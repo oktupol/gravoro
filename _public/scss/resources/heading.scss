@@ -1,12 +1,9 @@
 #heading {
   font-family: $heading-font-family;
   color: $heading-color;
-  font-style: italic;
   text-align: center;
 
   h1 {
-    font-variant: small-caps;
-
     @media #{$viewport-desktop} {
       font-size: 3em;
     }
@@ -19,6 +16,7 @@
   small {
     @extend .sidelines;
 
+    font-style: italic;
     color: $sub-heading-color;
   }
 

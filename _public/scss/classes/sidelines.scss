@@ -41,3 +41,24 @@
     border-top: solid 1px;
   }
 }
+
+@mixin sidelines-wrapper() {
+  display: block;
+  text-align: center;
+}
+
+.sidelines-wrapper {
+  @include sidelines-wrapper();
+
+  & > *:first-child {
+    @extend .sidelines;
+  }
+}
+
+.sidelines-double-wrapper {
+  @include sidelines-wrapper();
+
+  & > *:first-child {
+    @extend .sidelines-double;
+  }
+}
