@@ -27,3 +27,8 @@
     }
   }
 }
+
+#index-section-teaser {
+  @include perspective(1000);
+  @include transform-style(preserve-3d);
+}

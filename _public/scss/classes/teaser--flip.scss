@@ -1,7 +1,6 @@
 .teaser {
   position: relative;
-  //background-color: $background-overlay-color;
-  @include perspective(1000);
+  @include transform-style(preserve-3d);
 
   img.teaser-filler {
     display: block;
@@ -9,6 +8,8 @@
   }
 
   @mixin flippable() {
+    @include transform-style(preserve-3d);
+
     position: absolute;
     left: 0;
     top: 0;
