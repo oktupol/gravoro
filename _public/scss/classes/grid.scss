@@ -26,7 +26,11 @@
     }
   }
 
-  $widths: (full: 1, half: 2, third: 3, quarter: 4);
+  .grid-cell--fit--#{$viewport-name} {
+    flex: 1;
+  }
+
+  $widths: (full: 1, half: 2, third: 3, quarter: 4, threequarters: 4/3);
 
   @each $width, $divisor in $widths {
     .grid--#{$width}--#{$viewport-name} {

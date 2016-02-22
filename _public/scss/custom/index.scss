@@ -1,4 +1,19 @@
 @media #{$viewport-large-desktop} {
+  #index-section-teaser {
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 750px;
+
+    .teaser {
+      width: 250px;
+
+      &:first-child {
+        width: 750px;
+        order: 1;
+      }
+    }
+  }
+
   #index-section-text {
     p {
       flex: 0 0 48%;

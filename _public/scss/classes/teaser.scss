@@ -19,51 +19,54 @@
     max-width: none;
     display: block;
     transition-property: left, top, right, bottom, width, filter;
-    transition: all 1s ease;
+    transition: all $teaser-transition-duration $teaser-transition;
   }
 
   .teaser-text {
     visibility: hidden;
     position: absolute;
-    left: -20%;
-    top: -20%;
-    right: -20%;
-    bottom: -20%;
+    left: (1 - $teaser-text-initial-scale) * 50%;
+    top: (1 - $teaser-text-initial-scale) * 50%;
+    right: (1 - $teaser-text-initial-scale) * 50%;
+    bottom: (1- $teaser-text-initial-scale) * 50%;
     padding: .5em;
-    font-size: 1.4em;
+    font-size: $teaser-text-initial-scale * 1em;
     opacity: 0;
 
     transition-property: left, top, right, bottom, opacity, font-size, filter;
-    transition: all 1s ease;
+    transition: all $teaser-transition-duration $teaser-transition;
 
-    @include filter(blur(.24em));
+    background-color: transparentize($teaser-text-background-overlay-color, $teaser-text-background-overlay-transparency);
+    color: $teaser-text-color;
 
-    background-color: transparentize($background-overlay-color, $background-overlay-transparency);
+    @include filter(blur($teaser-text-initial-blur));
+    @include transform(rotate($teaser-text-initial-rotation));
   }
 
   &:hover {
     & > img.teaser-image {
       position: absolute;
-      left: -5%;
-      top: -5%;
-      right: -5%;
-      bottom: -5%;
-      width: 110%;
+      left: (1 - $teaser-image-final-scale) * 50%;
+      top: (1 - $teaser-image-final-scale) * 50%;
+      right: (1 - $teaser-image-final-scale) * 50%;
+      bottom: (1 - $teaser-image-final-scale) * 50%;
+      width: $teaser-image-final-scale * 100%;
       max-width: none;
-      @include filter(blur(.24em));
-      @include transform(rotate(1.5deg));
+      @include filter(blur($teaser-image-final-blur));
+      @include transform(rotate($teaser-image-final-rotation));
     }
 
     & > .teaser-text {
       visibility: visible;
-      left: 10%;
-      top: 10%;
-      right: 10%;
-      bottom: 10%;
-      font-size: 0.8em;
+      left: (1 - $teaser-text-final-scale) * 50%;
+      top: (1 - $teaser-text-final-scale) * 50%;
+      right: (1 - $teaser-text-final-scale) * 50%;
+      bottom: (1 - $teaser-text-final-scale) * 50%;
+      font-size: $teaser-text-final-scale * 1em;
       opacity: 1;
 
       @include filter(blur(0));
+      @include transform(rotate(0deg));
     }
   }
 }
