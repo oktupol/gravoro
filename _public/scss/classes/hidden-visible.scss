@@ -1,0 +1,23 @@
+@each $viewport-name, $viewport in $viewports {
+  @media #{$viewport} {
+    .hidden--#{$viewport-name} {
+      display: none;
+    }
+
+    .visible-inline--#{$viewport-name} {
+      display: inline;
+    }
+
+    .visible-block--#{$viewport-name} {
+      display: block;
+    }
+
+    .visible-inline-block--#{$viewport-name} {
+      display: inline-block;
+    }
+
+    .visible-flex--#{$viewport-name} {
+      display: flex;
+    }
+  }
+}
