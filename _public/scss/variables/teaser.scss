@@ -1,8 +1,6 @@
 $teaser-transition-duration: .5s;
 $teaser-transition: ease;
 
-$teaser-text-background-overlay-color: $background-overlay-color;
-$teaser-text-background-overlay-transparency: $background-overlay-transparency;
 $teaser-text-color: $color;
 
 /* only teaser--overlay */
@@ -15,5 +13,10 @@ $teaser-image-final-blur: .24em;
 $teaser-image-final-scale: 1.1;
 $teaser-image-final-rotation: 1.5deg;
 
+$teaser-text-background-overlay-color: $background-overlay-color;
+$teaser-text-background-overlay-transparency: $background-overlay-transparency;
+
 /* only teaser-flip */
 $teaser-flip-card-border-radius: 0;
+$teaser-image-final-brightness: 25%;
+$teaser-image-final-contrast: 80%;

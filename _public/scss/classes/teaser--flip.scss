@@ -15,7 +15,7 @@
     right: 0;
     bottom: 0;
 
-    transition: all $teaser-transition-duration $teaser-transition;
+    transition: all $teaser-transition-duration $teaser-transition, -webkit-filter 1ms ease ($teaser-transition-duration * 3 / 10), filter 1ms ease ($teaser-transition-duration * 3 / 10);
   }
 
   img.teaser-image {
@@ -29,18 +29,17 @@
     @include transform(rotateY(180deg));
 
     padding: .5em 1em;
-    background-color: transparentize($teaser-text-background-overlay-color, $teaser-text-background-overlay-transparency);
     color: $teaser-text-color;
-    overflow: hidden;
   }
 
   &:hover > img.teaser-image {
     @include transform(rotateY(180deg));
     @include border-radius($teaser-flip-card-border-radius);
+
+    @include filter(grayscale(100%) brightness($teaser-image-final-brightness) contrast($teaser-image-final-contrast));
   }
   &:hover > .teaser-text {
     @include transform(rotateY(360deg));
     @include border-radius($teaser-flip-card-border-radius);
-    overflow: auto;
   }
 }
