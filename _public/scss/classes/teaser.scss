@@ -3,9 +3,22 @@
   font-size: 1.25em;
   overflow: hidden;
   background-color: $background-overlay-color;
-  img {
+
+  img.teaser-filler {
     display: block;
-    transition-property: filter;
+    visibility: hidden;
+  }
+
+  img.teaser-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: none;
+    display: block;
+    transition-property: left, top, right, bottom, width, filter;
     transition: all 1s ease;
   }
 
@@ -29,6 +42,18 @@
   }
 
   &:hover {
+    & > img.teaser-image {
+      position: absolute;
+      left: -5%;
+      top: -5%;
+      right: -5%;
+      bottom: -5%;
+      width: 110%;
+      max-width: none;
+      @include filter(blur(.24em));
+      @include transform(rotate(1.5deg));
+    }
+
     & > .teaser-text {
       visibility: visible;
       left: 10%;
@@ -39,9 +64,6 @@
       opacity: 1;
 
       @include filter(blur(0));
-    }
-    & > img {
-      @include filter(blur(.24em));
     }
   }
 }
