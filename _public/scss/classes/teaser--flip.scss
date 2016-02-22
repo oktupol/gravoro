@@ -9,7 +9,7 @@
 
   @mixin flippable() {
     position: absolute;
-    transition: all $teaser-transition-duration $teaser-transition, -webkit-filter 1ms ease ($teaser-transition-duration * 3 / 10), filter 1ms ease ($teaser-transition-duration * 3 / 10);
+    transition: all $teaser-transition-duration $teaser-transition, -webkit-filter 1ms ease ($teaser-transition-duration * $teaser-flip-desaturation-point), filter 1ms ease ($teaser-transition-duration * $teaser-flip-desaturation-point);
   }
 
   img.teaser-image {
