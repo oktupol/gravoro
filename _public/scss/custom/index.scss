@@ -1,0 +1,14 @@
+@media #{$viewport-large-desktop} {
+  #text-section {
+    p {
+      &:nth-child(odd) {
+        margin-right: .6em;
+        margin-left: -.6em;
+      }
+      &:nth-child(even) {
+        margin-left: .6em;
+        margin-right: -.6em;
+      }
+    }
+  }
+}
