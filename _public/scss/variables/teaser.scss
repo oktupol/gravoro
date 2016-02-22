@@ -1,15 +1,19 @@
-$teaser-transition-duration: 1s;
+$teaser-transition-duration: .5s;
 $teaser-transition: ease;
-
-$teaser-text-initial-blur: .24em;
-$teaser-text-initial-scale: 1.4;
-$teaser-text-initial-rotation: 0deg;
-$teaser-text-final-scale: .85;
 
 $teaser-text-background-overlay-color: $background-overlay-color;
 $teaser-text-background-overlay-transparency: $background-overlay-transparency;
 $teaser-text-color: $color;
 
+/* only teaser--overlay */
+$teaser-text-initial-blur: .24em;
+$teaser-text-initial-scale: 1.4;
+$teaser-text-initial-rotation: 0deg;
+$teaser-text-final-scale: .85;
+
 $teaser-image-final-blur: .24em;
 $teaser-image-final-scale: 1.1;
 $teaser-image-final-rotation: 1.5deg;
+
+/* only teaser-flip */
+$teaser-flip-card-border-radius: 0;

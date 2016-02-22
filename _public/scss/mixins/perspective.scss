@@ -1,0 +1,5 @@
+@mixin perspective($property) {
+  -webkit-perspective: $property;
+     -moz-perspective: $property;
+          perspective: $property;
+}

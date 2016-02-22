@@ -1,0 +1,5 @@
+@mixin backface-visibility($property) {
+  -webkit-backface-visibility: $property;
+     -moz-backface-visibility: $property;
+          backface-visibility: $property;
+}

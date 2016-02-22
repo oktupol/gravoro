@@ -1,0 +1,45 @@
+.teaser {
+  position: relative;
+  //background-color: $background-overlay-color;
+  @include perspective(1000);
+
+  img.teaser-filler {
+    display: block;
+    visibility: hidden;
+  }
+
+  @mixin flippable() {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    transition: all $teaser-transition-duration $teaser-transition;
+    transition-property: transform, border-radius;
+  }
+
+  img.teaser-image {
+    @include flippable();
+    width: 100%;
+  }
+
+  .teaser-text {
+    @include flippable();
+    @include backface-visibility(hidden);
+    @include transform(rotateY(180deg));
+
+    padding: .5em 1em;
+    background-color: transparentize($teaser-text-background-overlay-color, $teaser-text-background-overlay-transparency);
+    color: $teaser-text-color;
+  }
+
+  &:hover > img.teaser-image {
+    @include transform(rotateY(180deg));
+    @include border-radius($teaser-flip-card-border-radius);
+  }
+  &:hover > .teaser-text {
+    @include transform(rotateY(360deg));
+    @include border-radius($teaser-flip-card-border-radius);
+  }
+}

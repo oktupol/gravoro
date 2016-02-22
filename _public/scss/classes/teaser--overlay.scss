@@ -1,0 +1,72 @@
+.teaser {
+  position: relative;
+  font-size: 1.25em;
+  overflow: hidden;
+  background-color: $background-overlay-color;
+
+  img.teaser-filler {
+    display: block;
+    visibility: hidden;
+  }
+
+  img.teaser-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: none;
+    display: block;
+    transition-property: left, top, right, bottom, width, filter;
+    transition: all $teaser-transition-duration $teaser-transition;
+  }
+
+  .teaser-text {
+    visibility: hidden;
+    position: absolute;
+    left: (1 - $teaser-text-initial-scale) * 50%;
+    top: (1 - $teaser-text-initial-scale) * 50%;
+    right: (1 - $teaser-text-initial-scale) * 50%;
+    bottom: (1- $teaser-text-initial-scale) * 50%;
+    padding: .5em 1em;
+    font-size: $teaser-text-initial-scale * 1em;
+    opacity: 0;
+
+    transition-property: left, top, right, bottom, opacity, font-size, filter;
+    transition: all $teaser-transition-duration $teaser-transition;
+
+    background-color: transparentize($teaser-text-background-overlay-color, $teaser-text-background-overlay-transparency);
+    color: $teaser-text-color;
+
+    @include filter(blur($teaser-text-initial-blur));
+    @include transform(rotate($teaser-text-initial-rotation));
+  }
+
+  &:hover {
+    & > img.teaser-image {
+      position: absolute;
+      left: (1 - $teaser-image-final-scale) * 50%;
+      top: (1 - $teaser-image-final-scale) * 50%;
+      right: (1 - $teaser-image-final-scale) * 50%;
+      bottom: (1 - $teaser-image-final-scale) * 50%;
+      width: $teaser-image-final-scale * 100%;
+      max-width: none;
+      @include filter(blur($teaser-image-final-blur));
+      @include transform(rotate($teaser-image-final-rotation));
+    }
+
+    & > .teaser-text {
+      visibility: visible;
+      left: (1 - $teaser-text-final-scale) * 50%;
+      top: (1 - $teaser-text-final-scale) * 50%;
+      right: (1 - $teaser-text-final-scale) * 50%;
+      bottom: (1 - $teaser-text-final-scale) * 50%;
+      font-size: $teaser-text-final-scale * 1em;
+      opacity: 1;
+
+      @include filter(blur(0));
+      @include transform(rotate(0deg));
+    }
+  }
+}
