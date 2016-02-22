@@ -1,6 +1,6 @@
 .teaser {
-  position: relative;
   @include transform-style(preserve-3d);
+  position: relative;
 
   img.teaser-filler {
     display: block;
@@ -8,28 +8,30 @@
   }
 
   @mixin flippable() {
-    @include transform-style(preserve-3d);
-
     position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-
     transition: all $teaser-transition-duration $teaser-transition, -webkit-filter 1ms ease ($teaser-transition-duration * 3 / 10), filter 1ms ease ($teaser-transition-duration * 3 / 10);
   }
 
   img.teaser-image {
     @include flippable();
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
   }
 
   .teaser-text {
+    @extend .grid--center;
     @include flippable();
     @include backface-visibility(hidden);
     @include transform(rotateY(180deg));
-
-    padding: .5em 1em;
+    left: 12%;
+    right: 12%;
+    top: 5%;
+    bottom: 5%;
+    margin: auto;
+    justify-content: center;
     color: $teaser-text-color;
   }
 
